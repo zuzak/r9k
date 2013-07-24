@@ -1,0 +1,39 @@
+{
+    "name":"r9k",
+    "description": "Bespoke implementation of ROBOT9000",
+    "private":true
+    "dependencies": {
+        "irc":"0.3.6",
+        "log-colors": "*"
+    },
+    "author": {
+        "name": "Douglas Gardner",
+        "email": "douglas@chippy.ch",
+        "url": "http://chippy.ch"
+    },
+    "bugs": "http://github.com/zuzak/r9k/issues",
+    "license": {
+        "type": "apache2",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zuzak/r9k.git"
+    },
+    "version": "0.0.1",
+    "config": {
+        "irc": {
+            [
+                {
+                    "server": "irc.freenode.net",
+                    "port": "6697",
+                    "ssl": "true",
+                    "nick": "ranna",
+                    "channels": [
+                        "#channel"
+                    ],
+                }
+            ]
+        }
+    }
+}
