@@ -26,13 +26,19 @@
         "irc": {
             "server": "irc.freenode.net",
             "port": "6697",
-            "ssl": "true",
-            "nick": "nick",
+            "ssl": true,
+            "nick": "nickname",
             "ident": "r9k",
             "password": "password",
             "channels": [
                 "#channel"
             ]
+        },
+        "mongo": {
+            "db": "mongodb://localhost/r9k"
+        },
+        "moderator": {
+            "global": false
         }
     }
 }
