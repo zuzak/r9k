@@ -4,8 +4,9 @@
     "private":true,
     "dependencies": {
         "irc":"0.3.6",
-        "log-colors": "*",
-        "mongoose": "3.6.15"
+        "mongoose": "3.6.15",
+        "underscore": "*",
+        "winston": "*"
     },
     "author": {
         "name": "Douglas Gardner",
@@ -27,18 +28,22 @@
             "server": "irc.freenode.net",
             "port": "6697",
             "ssl": true,
-            "nick": "nickname",
+            "nick": "ranna",
             "ident": "r9k",
             "password": "password",
             "channels": [
-                "#channel"
+                "##microchip08"
             ]
         },
         "mongo": {
             "db": "mongodb://localhost/r9k"
         },
         "moderator": {
-            "global": false
-        }
+            "global": false,
+            "active": true,
+            "chanserv": true,
+            "modifier": "2"
+        },
+        "verbosity": "chat"
     }
 }
