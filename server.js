@@ -139,13 +139,24 @@ db.once('open', function callback() {
                             log.info("INFRACTION: muting " + nick + " for " + muteDuration + "s (" + config.moderator.modifier + "^" + res.duration + ")");
                             setTimeout(function(){
                                 if(config.moderator.chanserv){
+                                    log.info("RELEASE: requesting +v for " + nick + " after a " + muteDuration + "s ban");
                                     client.say("chanserv","voice " + channel + " " + nick);
                                 } else {
+                                    log.info("RELEASE: setting +v for " + nick + " after a " + muteDuration + "s ban");
                                     client.send("mode",channel,"+v",nick);
                                 }
                                 res.active = false;
                                 res.save();
                             }, muteDuration * 1000);
+                            setTimeout(function(){
+                                Ban.findOne({'nickname':nick}, function(err, resu){
+                                    if(resu.duration>1){
+                                        resu.duration--;
+                                    }
+                                    log.info("Decaying ban history of " + nick + " by one level (now " + res.duration);
+                                    resu.save();
+                                });
+                            },config.moderator.decay * 3600 * 1000);
                         }
                     });
                 });
