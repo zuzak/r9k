@@ -24,7 +24,7 @@ Configuration is done by editing the config section of``package.json``.
     "config": {
         "irc": {
             "server": "irc.freenode.net",
-            "port": 6697",
+            "port": "6697",
             "ssl": true,
             "nick": "ROBOT9000",
             "ident": "r9k",
