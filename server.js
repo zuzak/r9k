@@ -211,7 +211,7 @@ db.once('open', function callback() {
                     } else {
                         log.info("Setting +v on %s in %s",nick,channel);
                         try {
-                            client.send(channel,"+v",nick);
+                            client.send("mode",channel,"+v",nick);
                             log.debug("Set!");
                         } catch(e) {
                             log.error("Unable to set +v on %s in %s",nick,channel);
